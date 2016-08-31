@@ -148,6 +148,11 @@ autoenv_cd() {
 
 # Override the cd alias
 enable_autoenv() {
+	# HACK to disable hash check
+	autoenv_shasum() {
+		echo "lol"
+	}
+
 	cd() {
 		autoenv_cd "${@}"
 	}
